@@ -1,16 +1,14 @@
-# Use an official Python runtime as a parent image
 FROM python:3.11-slim
 
 WORKDIR /app
 
-# copy requirements & install (layer caching)
-COPY src/requirements.txt .
+# copy requirements file
+COPY requirements.txt .
+
 RUN pip install --no-cache-dir -r requirements.txt
 
-# copy app code
-COPY src/ .
-
-ENV PYTHONUNBUFFERED=1
+# copy the app code
+COPY app.py .
 
 EXPOSE 5000
 
