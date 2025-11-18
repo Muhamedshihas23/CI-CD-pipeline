@@ -1,5 +1,7 @@
+version: "3"
+
 services:
-  web:
-    image: yourdockerhubusername/myapp:latest
+  app:
+    image: shihas321/myapp:latest
     ports:
       - "8080:5000"
